@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    background: #FFD56F;
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: 'Shrek', arial;
+    text-align: center;
+    color: #5c613d;
+    font-size: 2.1rem;
+    font-weight: 400;
+}
+
+
+.audio {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: circle();
+    background: #5c613d;
+}
+
+.audio:hover {
+    transform: scale(1.10, 1.10)
+}
+
+.audio img {
+    max-width: 1.5rem;
+}
+
+/* pontuação */
+.punctuation {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+}
+
+#hits {
+    color: #059e4a;
+}
+
+#mistakes {
+    color: #c41d1d;
+}
+
+/* section */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    box-sizing: content-box;
+    padding: 20px;
+    background-color: #FFB26B;
+    border-radius: 8px;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+    transition: all .5s;
+
+    pointer-events: none;
+}
+
+/* flip card */
+.face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: .4rem;
+
+    font-size: 1rem;
+}
+
+.face img {
+    width: 7rem;
+    height: 4rem;
+}
+
+#front, #back {
+    width: 4.7rem;
+    height: 4.7rem;
+}
+
+#front {
+    background: #524632;
+    border: 3px double #524632;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+#front:hover {
+    filter: brightness(1.5);
+}
+
+#back {
+    background: #524632;
+    border: 3px double #837569;
+    position: absolute;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+#back img {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* modal fim de jogo */
+.modal {
+    width: 16.4rem;
+    height: 26rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: absolute;
+    background: #000000;
+    border: 3px double #524632;
+    color: white;
+    border-radius: .5rem;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 1s;
+    transform: scale(.5);
+    visibility: hidden;
+}
+
+.modal p {
+    font-size: 1.3rem;
+}
+
+.modal .message {
+    font-size: 1rem;
+    color:  #FFD56F;
+}
+
+.modal button {
+   padding: 0.1rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    background-color:#FFD56F;
+    color: black;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+.modal.active {
+    transform: scale(1);
+    visibility: visible;
+}
+
+/* media query */
+@media (min-width: 414px) {
+    .modal {
+        width: 24.4rem;
+        height: 35rem;
+    }
+
+    h1 {
+        font-size: 2.9rem;
+    }
+
+    .punctuation {
+        font-size: 1.5rem;
+    }
+
+    #front, #back {
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+}
+
+@media (min-width: 667px) {
+    .modal {
+        width: 28.4rem;
+        height: 40rem;
+    }
+
+    header {
+        gap: .8rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .face img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    #front, #back {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+}
+
+@import url(https://allfont.net/allfont.css?fonts=shrek);
+
+@font-face {
+    font-family: 'Shrek';
+    src: url(font/shrek_[allfont.net].ttf);
+}
