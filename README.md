@@ -5,7 +5,7 @@ Jogo da mémoria responsivo desenvolvido em HTML, CSS, e JavaScript.
 
 - Clique no link para acessar o jogo e divirta-se: https://memorygame-luanavalim.netlify.app/
 
-![Preview](./assets/jogo.png)
+![Preview](./assets/preview.png)
 
 <br />
 
